@@ -6,7 +6,6 @@ class ContactController {
     const {
       Name,
       Title,
-      Tags,
       Company,
       Email,
       Phone,
@@ -25,7 +24,6 @@ class ContactController {
     const contact = Contact({
       Name,
       Title,
-      Tags,
       Company,
       Email,
       Phone,
@@ -35,6 +33,11 @@ class ContactController {
     });
     await contact.save();
     res.send(contact);
+  }
+
+  static async getAllContact(req,res){
+    const contacts = await Contact.find();
+    res.send(contacts)
   }
 }
 

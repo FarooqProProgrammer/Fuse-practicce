@@ -17,7 +17,7 @@ mongoose
 
 const app = express();
 
-
+app.use(express.json())
 app.use(contactRouter)
 
 app.listen(process.env.PORT,()=>{
